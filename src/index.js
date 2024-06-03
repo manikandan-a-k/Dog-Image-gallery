@@ -1,17 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import "./style.css"
 
+import image from "./Dogimages"
+
+function DogImages(dog){
+    return (
+           
+            <div className='dog__items'>
+          <img src={dog.src} alt="img" style={{width:"100%",height:"250px"}}></img>
+          <p>{dog.name}</p>
+          </div>
+           
+          
+          
+        
+    )
+  }
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+ <>
+    <div className='mainbox'>
+    {
+    image.map((item)=>{
+        return <DogImages src={item.src} name={item.name}></DogImages>
+    })
+}
+    </div>
+
+ </>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
