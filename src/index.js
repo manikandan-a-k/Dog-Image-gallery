@@ -8,7 +8,7 @@ function DogImages(dog){
     return (
            
             <div className='dog__items'>
-          <img src={dog.src} alt="img" style={{width:"100%",height:"250px"}}></img>
+          <img src={dog.src} alt="img"  className='dog__image'></img>
           <p>{dog.name}</p>
           </div>
            
